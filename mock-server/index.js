@@ -5,11 +5,12 @@ const path = require('path');
 const cors = require('cors');
 const port = 3000;
 
+const users = JSON.parse( fs.readFileSync(path.join(__dirname, 'users.json'), 'utf8') ) || {};
+
 app.use(cors());
 
-app.get('/users/list', (req, res) => {
-    const mockDataString = fs.readFileSync(path.join(__dirname, 'users.json'), 'utf8');
-    res.json(JSON.parse(mockDataString));
+app.get('/astronauts/list', (req, res) => {
+    res.json(users.astronauts || []);
 });
 
 app.listen(port, () => {
