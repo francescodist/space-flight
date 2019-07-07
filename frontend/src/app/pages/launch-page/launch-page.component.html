@@ -1,0 +1,24 @@
+<div class="launch-page">
+  <div class="launch-assignments-container" [ngClass]="getAssignments()?.length > 0 ? 'slide-in' : ''">
+    <div class="rocket-icon"></div>
+    <div class="launch-assignment-row" *ngFor="let assignment of getAssignments()">
+      <div class="launch-assignment">
+        <div class="astronaut">
+          <div class="astronaut-icon"></div>
+          <div class="astronaut-name">
+            {{assignment[0].name.first + ' ' + assignment[0].name.last}}
+          </div>
+        </div>
+        <div class="astronaut">
+          <div class="astronaut-name">
+            {{assignment[1].name.first + ' ' + assignment[1].name.last}}
+          </div>
+          <div class="astronaut-icon"></div>
+        </div>
+      </div>
+    </div>
+    <div class="fire-icon"></div>
+  </div>
+</div>
+
+
