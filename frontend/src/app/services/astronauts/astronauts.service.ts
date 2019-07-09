@@ -20,6 +20,7 @@ export class AstronautsService {
   }
 
   generateAssignments() {
+    this.assignments = [];
     this.crudService.getList(this.url).subscribe(astronauts => {
       astronauts.sort(() => Math.random() - 0.5);
       const astronautsToAssign: Astronaut[] = [...astronauts.slice(-1), ...astronauts.slice(0, -1)];

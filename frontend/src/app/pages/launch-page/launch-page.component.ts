@@ -12,7 +12,7 @@ export class LaunchPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.astronautService.generateAssignments();
+    this.launch();
   }
 
   getAssignments(): Assignment[] {
@@ -25,6 +25,10 @@ export class LaunchPageComponent implements OnInit {
 
   getLaunchHistory(): LaunchHistory {
     return this.astronautService.getLaunchHistory();
+  }
+
+  launch() {
+    this.astronautService.generateAssignments();
   }
 
 }

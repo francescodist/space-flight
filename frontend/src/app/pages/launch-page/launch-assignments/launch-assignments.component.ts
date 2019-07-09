@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Assignment} from "../../../services/astronauts/astronauts.service";
+import {Assignment} from '../../../services/astronauts/astronauts.service';
 
 @Component({
   selector: 'app-launch-assignments',
