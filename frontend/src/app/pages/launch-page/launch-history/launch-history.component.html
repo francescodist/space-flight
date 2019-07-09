@@ -1,0 +1,8 @@
+<div class="launch-container" *ngFor="let launch of launchHistory" (click)="onLaunchClick(launch.assignments)">
+  <div class="launch-date">{{launch.date | date:"dd-MM-yyyy 'at' hh:mm:ss"}}</div>
+  <div *ngFor="let assignment of launch.assignments">
+    {{assignment[0].name.first}} {{assignment[0].name.last}}
+    -
+    {{assignment[1].name.first}} {{assignment[1].name.last}}
+  </div>
+</div>

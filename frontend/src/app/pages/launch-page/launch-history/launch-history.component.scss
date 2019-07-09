@@ -1,0 +1,19 @@
+@import "~src/variables";
+
+.launch-container {
+  padding: 10px;
+  border: solid $main-color;
+  border-width: 0 0 1px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease 0s;
+
+  &:hover {
+    background-color: $main-color;
+  }
+
+  .launch-date {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+}

@@ -1,5 +1,5 @@
 <div class="launch-page">
-  <div class="launch-assignments-container" [ngClass]="getAssignments()?.length > 0 ? 'slide-in' : ''">
+  <div class="launch-assignments-container" [ngClass]="getAssignments().length > 0 ? 'slide-in' : ''">
     <div class="rocket-icon"></div>
     <div class="launch-assignment-row" *ngFor="let assignment of getAssignments()">
       <div class="launch-assignment">
@@ -18,6 +18,12 @@
       </div>
     </div>
     <div class="fire-icon"></div>
+  </div>
+  <div class="launch-history-container">
+    <div class="launch-history-title">
+      LAUNCH HISTORY
+    </div>
+    <app-launch-history [launchHistory]="getLaunchHistory()" (replaceAssignments)="replaceAssignments($event)"></app-launch-history>
   </div>
 </div>
 

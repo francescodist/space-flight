@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Assignment, AstronautsService} from '../../services/astronauts/astronauts.service';
+import {Component, OnInit} from '@angular/core';
+import {Assignment, AstronautsService, LaunchHistory} from '../../services/astronauts/astronauts.service';
 
 @Component({
   selector: 'app-launch-page',
@@ -8,7 +8,8 @@ import {Assignment, AstronautsService} from '../../services/astronauts/astronaut
 })
 export class LaunchPageComponent implements OnInit {
 
-  constructor(private astronautService: AstronautsService) { }
+  constructor(private astronautService: AstronautsService) {
+  }
 
   ngOnInit() {
     this.astronautService.generateAssignments();
@@ -16,6 +17,14 @@ export class LaunchPageComponent implements OnInit {
 
   getAssignments(): Assignment[] {
     return this.astronautService.getAssignments();
+  }
+
+  replaceAssignments(assignments: Array<Assignment>) {
+    this.astronautService.replaceAssignments(assignments);
+  }
+
+  getLaunchHistory(): LaunchHistory {
+    return this.astronautService.getLaunchHistory();
   }
 
 }
