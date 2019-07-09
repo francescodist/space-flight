@@ -30,6 +30,10 @@
     display: flex;
     padding: 0 5px;
 
+    &.has-dog {
+      background-image: url("~src/assets/icons/heart.svg");
+    }
+
     .astronaut {
 
       display: flex;
@@ -54,6 +58,10 @@
         background-size: 30px;
         background-position: center;
         background-repeat: no-repeat;
+
+        &.dog {
+          background-image: url("~src/assets/icons/dog.svg");
+        }
       }
     }
   }

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Assignment} from '../../../services/astronauts/astronauts.service';
+import {Astronaut} from '../../../models/Astronaut';
 
 @Component({
   selector: 'app-launch-assignments',
@@ -14,6 +15,10 @@ export class LaunchAssignmentsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  isDog(astronaut: Astronaut): boolean {
+    return astronaut.name.last.length === 0;
   }
 
 }
