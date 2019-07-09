@@ -22,75 +22,10 @@
     animation: slideInFromBottom 1s ease-out 0s forwards;
   }
 
-  .rocket-icon {
-    height: 100px;
-    width: 100px;
-    background-image: url("~src/assets/icons/rocket.svg");
-    margin: 20px auto auto auto;
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-
-  }
-
-  .launch-assignment-row {
+  app-launch-assignments {
     width: 100%;
-    margin: 10px auto;
-    display: flex;
-
-    .launch-assignment {
-      margin: auto;
-      background-color: $main-color;
-      background-image: url("~src/assets/icons/support.svg");
-      background-position: center;
-      background-size: 30px;
-      background-repeat: no-repeat;
-      width: 500px;
-      height: 50px;
-      border-radius: 50px;
-      display: flex;
-      padding: 0 5px;
-
-      .astronaut {
-
-        display: flex;
-
-        &:first-child {
-          margin: auto auto auto 0;
-        }
-
-        &:last-child {
-          margin: auto 0 auto auto;
-        }
-
-        .astronaut-name {
-          margin: auto;
-          font-size: 18px;
-        }
-
-        .astronaut-icon {
-          height: 50px;
-          width: 50px;
-          background-image: url("~src/assets/icons/astronaut-helmet.svg");
-          background-size: 30px;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
-      }
-    }
   }
 
-  .fire-icon {
-    height: 150px;
-    width: 100px;
-    background-image: url("~src/assets/icons/fire.svg");
-    margin: 0 auto;
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform: rotate(180deg);
-  }
 }
 
 .launch-history-container {

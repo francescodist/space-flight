@@ -1,29 +1,13 @@
 <div class="launch-page">
   <div class="launch-assignments-container" [ngClass]="getAssignments().length > 0 ? 'slide-in' : ''">
-    <div class="rocket-icon"></div>
-    <div class="launch-assignment-row" *ngFor="let assignment of getAssignments()">
-      <div class="launch-assignment">
-        <div class="astronaut">
-          <div class="astronaut-icon"></div>
-          <div class="astronaut-name">
-            {{assignment[0].name.first + ' ' + assignment[0].name.last}}
-          </div>
-        </div>
-        <div class="astronaut">
-          <div class="astronaut-name">
-            {{assignment[1].name.first + ' ' + assignment[1].name.last}}
-          </div>
-          <div class="astronaut-icon"></div>
-        </div>
-      </div>
-    </div>
-    <div class="fire-icon"></div>
+    <app-launch-assignments [assignments]="getAssignments()"></app-launch-assignments>
   </div>
   <div class="launch-history-container">
     <div class="launch-history-title">
       LAUNCH HISTORY
     </div>
-    <app-launch-history [launchHistory]="getLaunchHistory()" (replaceAssignments)="replaceAssignments($event)"></app-launch-history>
+    <app-launch-history [launchHistory]="getLaunchHistory()"
+                        (replaceAssignments)="replaceAssignments($event)"></app-launch-history>
   </div>
 </div>
 
