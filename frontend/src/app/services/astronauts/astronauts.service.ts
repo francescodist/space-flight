@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Astronaut} from '../../models/Astronaut';
 import {CrudService} from '../crud/crud.service';
 import {StorageService} from '../storage/storage.service';
+import {Subscription} from 'rxjs';
 
 export type Assignment = [Astronaut, Astronaut];
 export type LaunchHistory = Array<{ date: number; assignments: Array<Assignment> }>;
@@ -19,9 +20,9 @@ export class AstronautsService {
     this.launchHistory = this.storage.read('launch-history') || [];
   }
 
-  generateAssignments() {
+  generateAssignments(): Subscription {
     this.assignments = [];
-    this.crudService.getList(this.url).subscribe(astronauts => {
+    return this.crudService.getList(this.url).subscribe(astronauts => {
       astronauts.sort(() => Math.random() - 0.5);
       const astronautsToAssign: Astronaut[] = [...astronauts.slice(-1), ...astronauts.slice(0, -1)];
       this.assignments = astronauts
